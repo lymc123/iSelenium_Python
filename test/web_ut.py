@@ -2,22 +2,23 @@ import configparser
 import os
 import time
 import unittest
-
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
-
+@allure.feature("开始测试UI自动化")
 class ISelenium(unittest.TestCase):
     # 读入配置文件
     def get_config(self):
         config = configparser.ConfigParser()
-        config.read(os.path.join(os.environ['HOME'], 'iselenium.ini'),encoding='utf-8')
+        config.read(os.path.join(os.environ['HOME'], 'iselenium.ini'))
         return config
 
     def tearDown(self):
         self.driver.quit()
 
+    @allure.step(title="开始读取配置，启动浏览器")
     def setUp(self):
         config = self.get_config()
 
@@ -35,13 +36,14 @@ class ISelenium(unittest.TestCase):
 
         self.driver = webdriver.Chrome(executable_path=config.get('driver', 'chrome_driver'),
                                        options=chrome_options)
-
+    @allure.story(title="第一个测试用例，打开百度搜索今日头条")
     def test_webui_1(self):
         """ 测试用例1，验证'今日头条'关键词在百度上的搜索结果
         """
 
         self._test_baidu('今日头条', 'test_webui_1')
 
+    @allure.story(title="第二个测试用例，打开百度搜索王者荣耀")
     def test_webui_2(self):
         """ 测试用例2， 验证'王者荣耀'关键词在百度上的搜索结果
         """
