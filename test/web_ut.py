@@ -36,14 +36,14 @@ class ISelenium(unittest.TestCase):
 
         self.driver = webdriver.Chrome(executable_path=config.get('driver', 'chrome_driver'),
                                        options=chrome_options)
-    @allure.story(title="第一个测试用例，打开百度搜索今日头条")
+    @allure.story("第一个测试用例，打开百度搜索今日头条")
     def test_webui_1(self):
         """ 测试用例1，验证'今日头条'关键词在百度上的搜索结果
         """
 
         self._test_baidu('今日头条', 'test_webui_1')
 
-    @allure.story(title="第二个测试用例，打开百度搜索王者荣耀")
+    @allure.story("第二个测试用例，打开百度搜索王者荣耀")
     def test_webui_2(self):
         """ 测试用例2， 验证'王者荣耀'关键词在百度上的搜索结果
         """
