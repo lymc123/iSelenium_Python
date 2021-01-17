@@ -3,9 +3,11 @@ import os
 import time
 import unittest
 import allure
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+
 
 @allure.feature("开始测试UI自动化")
 class ISelenium(unittest.TestCase):

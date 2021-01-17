@@ -1,5 +1,0 @@
-"Status","Name","Duration in ms","Description"
-"passed","test.web_ut.ISelenium#test_webui_1","15399"," 测试用例1，验证'今日头条'关键词在百度上的搜索结果
-        "
-"passed","test.web_ut.ISelenium#test_webui_2","13587"," 测试用例2， 验证'王者荣耀'关键词在百度上的搜索结果
-        "
